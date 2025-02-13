@@ -1,8 +1,3 @@
-@media screen and (max-width: 768px) {
-    .container {
-        flex-direction: column; /* 모바일에서는 세로 정렬 */
-        height: auto; /* 높이 자동 조정 */
-    }
 
     .sidebar {
         width: 100%; /* 가로 폭 100% */
