@@ -6,26 +6,29 @@
 
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
-    display: flex; /* 기본적으로 가로 정렬 */
-    flex-wrap: nowrap; /* 모바일에서도 가로 정렬 유지 */
-    height: 100vh; /* 화면 높이 100% */
+    display: flex;
+    flex-wrap: nowrap;
+    min-height: 100vh; /* ✅ 최소한 화면 높이 100% 유지 */
 }
 
 .sidebar {
-    width: 250px; /* 왼쪽 영역의 너비 */
-    background-color: #f4f4f4;
+    width: 250px;
+    background-color: #f4f4f4; /* ✅ 왼쪽 영역의 배경색 유지 */
     color: black;
     padding: 20px;
-    flex-shrink: 0; /* 사이드바가 줄어들지 않도록 고정 */
+    flex-shrink: 0;
 }
 
 .content {
-    flex: 1; /* 남은 공간을 전부 차지 */
-    background-color: #d2ef6f;
+    flex: 1;
+    background-color: #d2ef6f; /* ✅ 오른쪽 영역 배경색 */
     padding: 20px;
+    min-height: 100vh; /* ✅ 내용이 많아지면 자동 확장 */
 }
 
 .center {
