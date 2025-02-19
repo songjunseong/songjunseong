@@ -66,3 +66,7 @@ body {
         max-width: 150px; /* 작은 화면에서는 최대 150px로 제한 */
     }
 }
+
+table {
+    margin: 0 auto; /* 좌우 자동 여백 → 가운데 정렬 */
+}
