@@ -39,3 +39,9 @@ th {
 .tight-line {
     line-height: 0.5; /* 기본값(1.5)보다 줄어든 간격 */
 }
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
