@@ -45,3 +45,16 @@ img {
     display: block;
     margin: 0 auto;
 }
+
+@keyframes blink {
+    0% { opacity: 0.3; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.blinking-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ff00;
+    animation: blink 2s infinite;
+}
