@@ -1,14 +1,19 @@
 table {
     margin: 20px auto; /* 중앙 정렬 */
-    border-collapse: separate; /* cellspacing 효과를 위해 collapse 대신 separate 사용 */
-    border-spacing: 10px; /* cellspacing과 같은 효과 */
+    border-collapse: separate; /* cellspacing 효과 */
+    border-spacing: 10px; /* 테이블 간격 */
     width: 50px; /* 테이블 크기 */
+    max-width: 100px; /* 최대 크기 제한 */
+    table-layout: fixed; /* 셀 크기를 고정 */
 }
 
 th {
-    padding: 3px; /* 셀 내부 여백 (cellpadding 효과) */
-    border: 1px solid rgb(0, 0, 0); /* 각 셀 테두리 */
-    background-color: #f0f0f0; /* 배경색 추가 */
+    padding: 3px;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: #f0f0f0;
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+    width: 50px; /* 고정 너비 설정 */
+    text-align: center; /* 중앙 정렬 */
 }
 /* 테이블을 포함하는 상단 메뉴 */
 .header {
