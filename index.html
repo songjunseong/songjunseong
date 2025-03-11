@@ -12,6 +12,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            background-color: #ffffff; /* 배경 유지 */
         }
         .container {
             width: 90%;
@@ -36,6 +37,35 @@
                 font-size: 0.9rem;
             }
         }
+
+        /* ❄ 눈 내리는 효과 추가 */
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            font-size: 16px; /* 기본 눈 크기 */
+            opacity: 0.8;
+            user-select: none;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        /* 📱 모바일 최적화 */
+        @media (max-width: 768px) {
+            .snowflake {
+                font-size: 12px; /* 모바일에서는 눈 크기 줄이기 */
+            }
+        }
     </style>
 </head>
 <body>
@@ -55,5 +85,35 @@
             <p class="center"><img src="https://64.media.tumblr.com/099165a4ca813b5d9202448944c555cd/3ef4c57c1eb63820-d3/s2048x3072/4974e7a5da02f4afbcf57811d64ee247e8bc3167.png"></p>
         </div>
     </div>
+
+    <!-- ❄ 눈 내리는 효과 추가 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function getRandomColor() {
+                const colors = ["#ffffff", "#add8e6", "#ffcccb", "#d8bfd8", "#90ee90", "#f0e68c"];
+                return colors[Math.floor(Math.random() * colors.length)];
+            }
+
+            function createSnowflake() {
+                const snowflake = document.createElement("div");
+                snowflake.className = "snowflake";
+                snowflake.innerHTML = "★"; // 눈송이 모양
+                snowflake.style.left = Math.random() * 100 + "vw"; // 랜덤한 위치
+                snowflake.style.animationDuration = (Math.random() * 3 + 2) + "s"; // 속도 랜덤
+                snowflake.style.fontSize = (Math.random() * 10 + 10) + "px"; // 크기 랜덤
+                snowflake.style.color = getRandomColor(); // 랜덤 색상 적용
+
+                document.body.appendChild(snowflake);
+
+                // 일정 시간이 지나면 눈 삭제 (성능 최적화)
+                setTimeout(() => {
+                    snowflake.remove();
+                }, 5000);
+            }
+
+            // 눈송이 생성 주기 설정 (0.3초마다 새로운 눈송이 생성)
+            setInterval(createSnowflake, 300);
+        });
+    </script>
 </body>
 </html>
