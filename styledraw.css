@@ -1,0 +1,65 @@
+table {
+    margin: 20px auto; /* 중앙 정렬 */
+    border-collapse: separate; /* cellspacing 효과 */
+    border-spacing: 10px; /* 테이블 간격 */
+    width: 50px; /* 테이블 크기 */
+    max-width: 100px; /* 최대 크기 제한 */
+    table-layout: fixed; /* 셀 크기를 고정 */
+}
+
+th {
+    padding: 3px;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: #f0f0f0;
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+    width: 50px; /* 고정 너비 설정 */
+    text-align: center; /* 중앙 정렬 */
+}
+/* 테이블을 포함하는 상단 메뉴 */
+.header {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #ffffff; /* 연한 배경색 추가 */
+    text-align: center;
+}
+
+/* 아래쪽 콘텐츠 */
+.content {
+    margin-top: 20px; /* 위쪽과 간격 */
+    padding: 20px;
+    background-color: #c0c0c0;
+    text-align: center;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+    .header table {
+        width: 100%;
+    }
+    
+    .content {
+        padding: 10px;
+    }
+}
+.tight-line {
+    line-height: 0.5; /* 기본값(1.5)보다 줄어든 간격 */
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+@keyframes blink {
+    0% { opacity: 0.7; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.blinking-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ff00;
+    animation: blink 1s infinite;
+}
